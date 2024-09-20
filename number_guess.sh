@@ -13,7 +13,7 @@ MAIN_MENU() {
     # welcome the user
     echo -e "\nWelcome, $USERNAME! It looks like this is your first time here."
 
-    # insert new customer
+    # insert new user
     INSERT_USERNAME_RESULT=$($PSQL "INSERT INTO users(username, games_played, best_game) VALUES('$USERNAME', 0, 0)") 
   else
     GAMES_PLAYED=$($PSQL "SELECT games_played FROM users WHERE username = '$USERNAME'")
